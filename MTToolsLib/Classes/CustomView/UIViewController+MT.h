@@ -7,6 +7,9 @@
 
 #import <UIKit/UIKit.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 #define InstanceSBVC(SBName, vcID) [UIViewController instanceFromStoryBoard:SBName ID:vcID]
 
 
@@ -18,6 +21,7 @@
 
 + (UIViewController *)topViewController:(UIViewController *)vc;
 
+NS_ASSUME_NONNULL_END
 
 @end
 
