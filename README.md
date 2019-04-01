@@ -17,7 +17,7 @@ MTToolsLib is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MTToolsLib'
+pod 'MTToolsLib', :git => 'git@github.com:TinaXie/MTToolsLib.git'
 ```
 
 ## Author

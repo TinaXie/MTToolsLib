@@ -21,22 +21,24 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/fayxjc@163.com/MTToolsLib'
+  s.homepage         = 'https://github.com/TinaXie/MTToolsLib'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'fayxjc@163.com' => 'xiejc@yiche.com' }
-  s.source           = { :git => 'https://github.com/fayxjc@163.com/MTToolsLib.git', :tag => s.version.to_s }
+  s.author           = { 'xiejc' => 'fayxjc@163.com' }
+  s.source           = { :git => 'git@github.com:TinaXie/MTToolsLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'MTToolsLib/Classes/**/*'
+  s.resources = 'MTToolsLib/Assets/*'
   
   # s.resource_bundles = {
   #   'MTToolsLib' => ['MTToolsLib/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+   s.frameworks = 'UIKit', 'MapKit'
+   
   # s.dependency 'AFNetworking', '~> 2.3'
 end
