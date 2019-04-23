@@ -16,6 +16,9 @@
 }
 
 - (void)customFrame:(MTButtonType)type space:(CGFloat)space {
+    CGFloat totalH = CGRectGetHeight(self.bounds);
+    CGFloat toalW = CGRectGetWidth(self.bounds);
+    
     CGFloat titleW = CGRectGetWidth(self.titleLabel.bounds);//titleLabel的宽度
     CGFloat titleH = CGRectGetHeight(self.titleLabel.bounds);//titleLabel的高度
     
@@ -26,18 +29,21 @@
     CGFloat imageCenterX = btnCenterX - titleW/2;//imageView中心点X的坐标（以按钮左上角为原点的坐标系）
     CGFloat titleCenterX = btnCenterX + imageW/2;//titleLabel中心点X的坐标（以按钮左上角为原点的坐标系）
     
-
+    
+    CGRect titleFrame = self.titleLabel.frame;
+    CGRect imageFrame = self.imageView.frame;
+    
     switch (type) {
         case MTButtonType_Top:
         {
-            self.titleEdgeInsets = UIEdgeInsetsMake(imageH/2+ space/2, -(titleCenterX-btnCenterX), -(imageH/2 + space/2), titleCenterX-btnCenterX);
-            self.imageEdgeInsets = UIEdgeInsetsMake(-(titleH/2 + space/2), btnCenterX-imageCenterX, titleH/2+ space/2, -(btnCenterX-imageCenterX));
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageFrame.size.width), imageFrame.size.height + space, 0);
+            self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, totalH - imageH, 0);
         }
             break;
         case MTButtonType_Bottom:
         {
-            self.titleEdgeInsets = UIEdgeInsetsMake(-(imageH/2+ space/2), -(titleCenterX-btnCenterX), imageH/2 + space/2, titleCenterX-btnCenterX);
-            self.imageEdgeInsets = UIEdgeInsetsMake(titleH/2 + space/2, btnCenterX-imageCenterX,-(titleH/2+ space/2), -(btnCenterX-imageCenterX));
+            self.titleEdgeInsets = UIEdgeInsetsMake(0, -(imageFrame.size.width), imageFrame.size.height + space, 0);
+            self.imageEdgeInsets = UIEdgeInsetsMake(totalH - imageH, (titleFrame.size.width), 0, 0);
         }
             break;
         case MTButtonType_Left:
