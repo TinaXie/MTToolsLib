@@ -7,6 +7,7 @@
 //
 
 #import "NSString+MTDate.h"
+#import "NSString+MT.h"
 
 @implementation NSString (MTDate)
 
