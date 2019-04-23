@@ -20,6 +20,7 @@
 #import "NSString+MTMD5.h"
 #import "NSString+MTAES.h"
 
+#import "NSString+MTDate.h"
 #import "MTStringSymbolRange.h"
 #import "NSString+MTHtml.h"
 #import "UIDevice+MT.h"
