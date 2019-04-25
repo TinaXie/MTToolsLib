@@ -10,22 +10,19 @@
 
 @interface UIImage (ARQRCode)
 
-//生成二维码
+/**
+ *  生成二维码
+ */
 + (UIImage *)creatCIQRCodeImageWithString:(NSString *)dataString
                                      size:(CGFloat)size;
 
 /**
- *  根据CIImage生成指定大小的UIImage
- *
- *  @param image CIImage
- *  @param size  图片宽度
- *
- *  @return 生成的高清的UIImage
+ *  生成条形码
  */
-+ (UIImage *)creatNonInterpolatedUIImageFormCIImage:(CIImage *)image withSize:(CGFloat)size;
++ (UIImage *)creatCIBarCodeImageWithString:(NSString *)dataString
+                                      size:(CGSize)size;
 
 
-- (UIImage *)imageWithRoundedCornersSize:(float)cornerRadius;
 
 
 @end
