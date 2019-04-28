@@ -21,7 +21,6 @@
 - (NSString *)mt_formatString:(NSString *)dateFormat{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = dateFormat;
-    dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
     return [dateFormatter stringFromDate:self];
 }
 
@@ -32,7 +31,6 @@
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = format;
-    dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
     NSDate *date = [dateFormatter dateFromString:dateString];
     return date;
 }
