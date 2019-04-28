@@ -37,6 +37,7 @@
 #import "UIImage+ARQRCode.h"
 #import "NSURL+MT.h"
 #import "NSObject+MTHook.h"
+#import "CLPlacemark+MT.h"
 
 
 #import "MTPopView.h"

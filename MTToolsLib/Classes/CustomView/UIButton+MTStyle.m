@@ -17,18 +17,10 @@
 
 - (void)customFrame:(MTButtonType)type space:(CGFloat)space {
     CGFloat totalH = CGRectGetHeight(self.bounds);
-    CGFloat toalW = CGRectGetWidth(self.bounds);
-    
     CGFloat titleW = CGRectGetWidth(self.titleLabel.bounds);//titleLabel的宽度
-    CGFloat titleH = CGRectGetHeight(self.titleLabel.bounds);//titleLabel的高度
     
     CGFloat imageW = CGRectGetWidth(self.imageView.bounds);//imageView的宽度
     CGFloat imageH = CGRectGetHeight(self.imageView.bounds);//imageView的高度
-    
-    CGFloat btnCenterX = CGRectGetWidth(self.bounds)/2;//按钮中心点X的坐标（以按钮左上角为原点的坐标系）
-    CGFloat imageCenterX = btnCenterX - titleW/2;//imageView中心点X的坐标（以按钮左上角为原点的坐标系）
-    CGFloat titleCenterX = btnCenterX + imageW/2;//titleLabel中心点X的坐标（以按钮左上角为原点的坐标系）
-    
     
     CGRect titleFrame = self.titleLabel.frame;
     CGRect imageFrame = self.imageView.frame;
