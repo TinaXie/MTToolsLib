@@ -7,6 +7,7 @@
 //
 
 #import "CLPlacemark+MT.h"
+#import "NSString+MT.h"
 
 @implementation CLPlacemark (MT)
 
@@ -15,27 +16,27 @@
     NSLog(@"CLPlacemark fullAddress dic:%@", dic);
 
     NSString *State = [dic objectForKey:@"State"];
-    if(isNullString(State)){
+    if([NSString isNullString:State]){
         State = @"";
     }
     
     NSString *city = [dic objectForKey:@"City"];
-    if(isNullString(city)){
+    if([NSString isNullString:city]){
         city = @"";
     }
     
     NSString *SubLocality = [dic objectForKey:@"SubLocality"];
-    if(isNullString(SubLocality)){
+    if([NSString isNullString:SubLocality]){
         SubLocality = @"";
     }
     
     NSString *Street = [dic objectForKey:@"Street"];
-    if(isNullString(Street)){
+    if([NSString isNullString:Street]){
         Street = @"";
     }
     
-    NSString *fullAddress = [NSString stringWithFormat:@"%@%@%@%@",State,city,SubLocality,Street];
-    DLog(@"CLPlacemark fullAddress:%@", fullAddress);
+    NSString *fullAddress = [NSString stringWithFormat:@"%@%@%@%@", State, city, SubLocality, Street];
+    NSLog(@"CLPlacemark fullAddress:%@", fullAddress);
 
     return fullAddress;
 }
@@ -47,7 +48,7 @@
     if (address == nil) {
         address = self.fullAddress;
     }
-    DLog(@"CLPlacemark locationAddress:%@", address);
+    NSLog(@"CLPlacemark locationAddress:%@", address);
     return address;
 
 }
