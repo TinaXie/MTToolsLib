@@ -18,6 +18,7 @@
 #define Screen_Height [UIScreen mainScreen].bounds.size.height
 
 #define ViewByNib(nibName) [UIView viewByNib:nibName]
+#define ViewByNibWithClass(class) [UIView viewByNib:NSStringFromClass(class)]
 
 
 @interface UIView (MT)

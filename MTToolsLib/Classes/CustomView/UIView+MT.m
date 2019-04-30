@@ -94,7 +94,7 @@
 }
 
 - (void)cornerWithRadius:(float)cornerR borderColor:(UIColor *)borderColor {
-    [self cornerWithRadius:cornerR borderColor:borderColor borderWidth:0.5];
+    [self cornerWithRadius:cornerR borderColor:borderColor borderWidth:1];
 }
 
 - (void)cornerHalfWithBorderColor:(UIColor *)borderColor {
