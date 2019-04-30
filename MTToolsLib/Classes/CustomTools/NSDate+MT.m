@@ -35,6 +35,10 @@
     return date;
 }
 
+- (BOOL)isSameDay:(NSDate *)date {
+    return self.mt_year == date.mt_year && self.mt_month == date.mt_month && self.mt_day == date.mt_day;
+}
+
 #pragma mark - 日期
 
 

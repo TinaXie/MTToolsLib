@@ -6,8 +6,55 @@
 //
 
 #import "UIViewController+MTNavigation.h"
+#import "UIColor+MT.h"
+#import "UIFont+MT.h"
 
 @implementation UIViewController (MTNavigation)
+
+#pragma mark - 导航栏
+- (void)setRightButtonItemWithImage:(UIImage *)img action:(SEL)action {
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBtn setFrame:CGRectMake(0, 0, 40, 40)];
+    [rightBtn setImage:img forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBtnItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = rightBtnItem;
+}
+
+- (void)setRightButtonItemWithTitle:(NSString *)title action:(SEL)action {
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBtn setTitle:title forState:UIControlStateNormal];
+    [rightBtn setTitleColor:MTColorHex(@"#414143") forState:UIControlStateNormal];
+    rightBtn.titleLabel.font = MT_PingFangSC_MediumFont(14.0);
+    [rightBtn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightBtnItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = rightBtnItem;
+}
+
+- (UIImageView *)findNavigationBarBottomLine {
+    return [self findHairlineImageViewUnder:self.navigationController.navigationBar];
+}
+
+//找到navigationBar下划线
+- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
+    if ([view isKindOfClass:UIImageView.class] &&
+        view.bounds.size.height <= 1.0 &&
+        [view isKindOfClass:[UIImageView class]]) {
+        return (UIImageView *)view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
+}
+
+
+
+#pragma mark - 跳转
+
 
 - (id)preViewControllerWithPreCount:(NSUInteger)preCount {
     id preVC = nil;

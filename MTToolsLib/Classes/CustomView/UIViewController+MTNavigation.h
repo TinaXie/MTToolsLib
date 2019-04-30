@@ -11,10 +11,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIViewController (MTNavigation)
 
+#pragma mark - 导航栏
 
-- (id)preViewControllerWithPreCount:(NSUInteger)preCount;
+
+- (void)setRightButtonItemWithImage:(UIImage *)img action:(SEL)action;
+
+- (void)setRightButtonItemWithTitle:(NSString *)title action:(SEL)action;
+
+- (UIImageView *)findNavigationBarBottomLine;
+
+#pragma mark - 跳转
 
 - (id)preViewController;
+
+- (id)preViewControllerWithPreCount:(NSUInteger)preCount;
 
 - (void)replaceWithViewController:(UIViewController *)destinationViewController animated:(BOOL)animated;
 

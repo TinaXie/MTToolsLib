@@ -33,7 +33,9 @@
 #import "UITextField+MT.h"
 #import "UIButton+MTStyle.h"
 #import "UIViewController+MT.h"
+#import "UIViewController+MTTextView.h"
 #import "UIViewController+MTNavigation.h"
+
 #import "UIImage+ARQRCode.h"
 #import "NSURL+MT.h"
 #import "NSObject+MTHook.h"
