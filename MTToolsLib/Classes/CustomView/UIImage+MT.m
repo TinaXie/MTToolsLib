@@ -267,12 +267,24 @@ typedef enum  {
 - (UIImage *)cropImageInRect:(CGRect)rect {
     CGImageRef imageRef = self.CGImage;
     CGImageRef imagePartRef = CGImageCreateWithImageInRect(imageRef,rect);
-    UIImage * cropImage=[UIImage imageWithCGImage:imagePartRef];
+    UIImage *cropImage=[UIImage imageWithCGImage:imagePartRef];
     CGImageRelease(imagePartRef);
     
     return cropImage;
 }
 
+
+
+- (UIImage *)scaleImageToRatio:(float)scaleRatio {
+    UIGraphicsBeginImageContext(CGSizeMake(self.size.width * scaleRatio,
+                                           self.size.height * scaleRatio));
+    [self drawInRect:CGRectMake(0, 0,
+                                self.size.width * scaleRatio,
+                                self.size.height * scaleRatio)];
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return scaledImage;
+}
 
 
 @end

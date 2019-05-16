@@ -70,4 +70,13 @@
  */
 - (UIImage *)cropImageInRect:(CGRect)rect;
 
+
+/**
+ 按比例缩放图片
+
+ @param scaleRatio 比例
+ @return 返回缩放的图片
+ */
+- (UIImage *)scaleImageToRatio:(float)scaleRatio;
+
 @end
