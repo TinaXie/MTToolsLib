@@ -265,12 +265,15 @@ typedef enum  {
 
 //剪裁图片
 - (UIImage *)cropImageInRect:(CGRect)rect {
-    CGImageRef imageRef = self.CGImage;
-    CGImageRef imagePartRef = CGImageCreateWithImageInRect(imageRef,rect);
-    UIImage *cropImage=[UIImage imageWithCGImage:imagePartRef];
-    CGImageRelease(imagePartRef);
+    CGImageRef subImageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
+    CGRect smallBounds = CGRectMake(0, 0, CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
     
-    return cropImage;
+    UIGraphicsBeginImageContext(smallBounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, smallBounds, subImageRef);
+    UIImage *smallImage = [UIImage imageWithCGImage:subImageRef];
+    UIGraphicsEndImageContext();
+    return smallImage;
 }
 
 
