@@ -62,4 +62,12 @@
  */
 - (UIImage *)scaleImageToSize:(CGSize)size;
 
+/**
+ 剪裁图片
+
+ @param rect 截取图片区域
+ @return 返回截取的图片
+ */
+- (UIImage *)cropImageInRect:(CGRect)rect;
+
 @end

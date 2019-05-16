@@ -205,7 +205,6 @@ typedef enum  {
 /**
  *  等比缩放图片裁剪指定区域图片
  *
- *  @param image 原图
  *  @param size  裁剪范围
  *
  *  @return 裁剪后的图片
@@ -242,7 +241,6 @@ typedef enum  {
 /**
  *  指定Size压缩图片 (图片会压缩变形)
  *
- *  @param image 原图
  *  @param size  压缩size
  *
  *  @return 压缩后的图片
@@ -264,5 +262,17 @@ typedef enum  {
     // 返回新的改变大小后的图片
     return scaledImage;
 }
+
+//剪裁图片
+- (UIImage *)cropImageInRect:(CGRect)rect {
+    CGImageRef imageRef = self.CGImage;
+    CGImageRef imagePartRef = CGImageCreateWithImageInRect(imageRef,rect);
+    UIImage * cropImage=[UIImage imageWithCGImage:imagePartRef];
+    CGImageRelease(imagePartRef);
+    
+    return cropImage;
+}
+
+
 
 @end
