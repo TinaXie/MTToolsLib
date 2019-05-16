@@ -202,4 +202,67 @@ typedef enum  {
 }
 
 
+/**
+ *  等比缩放图片裁剪指定区域图片
+ *
+ *  @param image 原图
+ *  @param size  裁剪范围
+ *
+ *  @return 裁剪后的图片
+ */
+- (UIImage *)compressImageToSize:(CGSize)size {
+    // 原图宽
+    CGFloat imageWidth = self.size.width;
+    // 原图高
+    CGFloat imageHeight = self.size.height;
+    
+    // 缩放比例
+    CGFloat widthScale = imageWidth /size.width;
+    CGFloat heightScale = imageHeight /size.height;
+    
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的context
+    UIGraphicsBeginImageContext(CGSizeMake(size.width, size.height));
+    
+    // 横屏图片
+    if (widthScale > heightScale) {
+        [self drawInRect:CGRectMake(0, 0, imageWidth /heightScale , size.height)];
+    } else { // 竖屏图片
+        [self drawInRect:CGRectMake(0, 0, size.width , imageHeight /widthScale)];
+    }
+    
+    // 从当前context中创建一个改变大小后的图片
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 使当前的context出堆栈
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+/**
+ *  指定Size压缩图片 (图片会压缩变形)
+ *
+ *  @param image 原图
+ *  @param size  压缩size
+ *
+ *  @return 压缩后的图片
+ */
+- (UIImage *)scaleImageToSize:(CGSize)size {
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的context
+    UIGraphicsBeginImageContext(size);
+    
+    // 绘制改变大小的图片
+    [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    // 从当前context中创建一个改变大小后的图片
+    UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 使当前的context出堆栈
+    UIGraphicsEndImageContext();
+    
+    // 返回新的改变大小后的图片
+    return scaledImage;
+}
+
 @end

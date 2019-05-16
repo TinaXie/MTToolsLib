@@ -42,8 +42,24 @@
 
 - (UIImage *)renderLRColors:(NSArray*)colors;
 
-
-
 - (UIImage *)tintColor:(UIColor *)tintColor;
+
+
+
+/**
+ *  等比缩放图片裁剪指定区域图片
+ *  @param size  裁剪范围
+ *
+ *  @return 裁剪后的图片
+ */
+- (UIImage *)compressImageToSize:(CGSize)size;
+
+/**
+ *  指定Size压缩图片 (图片会压缩变形)
+ *  @param size  压缩size
+ *
+ *  @return 压缩后的图片
+ */
+- (UIImage *)scaleImageToSize:(CGSize)size;
 
 @end
