@@ -11,8 +11,8 @@
 @implementation UIView (MT)
 
 + (UIWindow *)getCurrentWindow {
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    if (window.windowLevel != UIWindowLevelNormal) {
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    if (window == nil) {
         NSArray *windows = [[UIApplication sharedApplication] windows];
         for(UIWindow * tmpWin in windows) {
             if (tmpWin.windowLevel == UIWindowLevelNormal) {
@@ -20,6 +20,10 @@
                 break;
             }
         }
+    }
+    
+    if (window == nil) {
+        window = [[UIApplication sharedApplication] windows].firstObject;
     }
     return window;
 }
