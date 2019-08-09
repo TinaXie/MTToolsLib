@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)mt_formatString:(NSString *)dateFormat;
 
-- (BOOL)isSameDay:(NSDate *)date;
+- (BOOL)mt_isSameDay:(NSDate *)date;
 
 #pragma mark - 日期
 

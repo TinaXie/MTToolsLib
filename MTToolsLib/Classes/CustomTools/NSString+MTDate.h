@@ -18,14 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return 日期字符串
  */
-- (NSString *)dayString;
+- (NSString *)mt_dayString;
 
 /**
  格式化时间字符串: yyyy-MM-dd HH:mm:ss -> yyyy.MM.dd
  
  @return 日期字符串
  */
-- (NSString *)dayDotString;
+- (NSString *)mt_dayDotString;
 
 
 /**
@@ -35,7 +35,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param stringFormatter 输出字符串的格式
  @return 日期字符串
  */
-- (NSString *)dayStringWithDateFormatter:(NSString *)dateFormatter stringFormatter:(NSString *)stringFormatter;
+- (NSString *)mt_dayStringWithDateFormatter:(NSString *)dateFormatter stringFormatter:(NSString *)stringFormatter;
 
 @end
 

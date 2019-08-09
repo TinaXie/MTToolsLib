@@ -11,15 +11,15 @@
 
 @implementation NSString (MTDate)
 
-- (NSString *)dayString {
-    return [self dayStringWithDateFormatter:@"yyyy-MM-dd HH:mm:ss" stringFormatter:@"yyyy-MM-dd"];
+- (NSString *)mt_dayString {
+    return [self mt_dayStringWithDateFormatter:@"yyyy-MM-dd HH:mm:ss" stringFormatter:@"yyyy-MM-dd"];
 }
 
-- (NSString *)dayDotString {
-    return [self dayStringWithDateFormatter:@"yyyy-MM-dd HH:mm:ss" stringFormatter:@"yyyy.MM.dd"];
+- (NSString *)mt_dayDotString {
+    return [self mt_dayStringWithDateFormatter:@"yyyy-MM-dd HH:mm:ss" stringFormatter:@"yyyy.MM.dd"];
 }
 
-- (NSString *)dayStringWithDateFormatter:(NSString *)dateFormatter stringFormatter:(NSString *)stringFormatter {
+- (NSString *)mt_dayStringWithDateFormatter:(NSString *)dateFormatter stringFormatter:(NSString *)stringFormatter {
     if ([NSString isNullString:self]) {
         return @"";
     }

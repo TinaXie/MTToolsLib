@@ -35,7 +35,7 @@
     return date;
 }
 
-- (BOOL)isSameDay:(NSDate *)date {
+- (BOOL)mt_isSameDay:(NSDate *)date {
     return self.mt_year == date.mt_year && self.mt_month == date.mt_month && self.mt_day == date.mt_day;
 }
 
@@ -75,7 +75,7 @@
  
  @return @【第一天，最后一天】
  */
-- (NSArray *)getMonthFirstAndLastDay {
+- (NSArray *)mt_getMonthFirstAndLastDay {
     double interval = 0;
     NSDate *firstDate = nil;
     NSDate *lastDate = nil;

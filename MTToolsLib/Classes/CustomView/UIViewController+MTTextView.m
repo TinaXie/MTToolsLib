@@ -17,7 +17,7 @@
 }
 
 - (void)addTextFieldChangeNotification:(UITextField *)textField {
-    [textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+    [textField addTarget:self action:@selector(mttextFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
 }
 
 - (NSInteger)maxLengthOfTextField:(UITextField *)textField  {
@@ -26,7 +26,7 @@
 }
 
 
-- (void)textFieldDidChange:(UITextField *)textField {
+- (void)mttextFieldDidChange:(UITextField *)textField {
     NSInteger maxLength = 100;
     if ([self respondsToSelector:@selector(maxLengthOfTextField:)]) {
         maxLength = [self maxLengthOfTextField:textField];
@@ -49,10 +49,6 @@
             }
         }
     }
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
