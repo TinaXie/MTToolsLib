@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return @【第一天，最后一天】
  */
-- (NSArray *)getMonthFirstAndLastDay;
+- (NSArray *)mt_getMonthFirstAndLastDay;
 
 /**
  前一天

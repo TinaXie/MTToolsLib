@@ -48,7 +48,7 @@
  @return 第一天
  */
 - (NSDate *)mt_firstDayOfMonth {
-    NSArray *days = [self getMonthFirstAndLastDay];
+    NSArray *days = [self mt_getMonthFirstAndLastDay];
     if (days) {
         return days.firstObject;
     }
@@ -62,7 +62,7 @@
  @return 最后一天
  */
 - (NSDate *)mt_endDayOfMonth {
-    NSArray *days = [self getMonthFirstAndLastDay];
+    NSArray *days = [self mt_getMonthFirstAndLastDay];
     if (days) {
         return days.lastObject;
     }
