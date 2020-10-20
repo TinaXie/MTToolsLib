@@ -34,5 +34,13 @@
 
 - (UIColor *)colorWithAlpha:(CGFloat)alpha;
 
+// UIColor转16进制格式的字符串
+- (NSString *)MTHexStringFromColor;
+
+// UIColor转RGBA格式的字符串
+- (NSString *)MTRGBAStringFromColor;
+
+
+
 
 @end

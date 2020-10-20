@@ -119,4 +119,32 @@
     return result;
 }
 
+
+// UIColor转#ffffff格式的字符串
+- (NSString *)MTHexStringFromColor {
+    const CGFloat *components = CGColorGetComponents(self.CGColor);
+
+    CGFloat r = components[0];
+    CGFloat g = components[1];
+    CGFloat b = components[2];
+
+    return [NSString stringWithFormat:@"#%02lX%02lX%02lX",
+            lroundf(r * 255),
+            lroundf(g * 255),
+            lroundf(b * 255)];
+}
+
+- (NSString *)MTRGBAStringFromColor {
+    CGFloat r = 0.0;
+    CGFloat g = 0.0;
+    CGFloat b = 0.0;
+    CGFloat a = 0.0;
+    [self getRed:&r green:&g blue:&b alpha:&a];
+    return [NSString stringWithFormat:@"%ld%ld%ld%f",
+            lroundf(r * 255),
+            lroundf(g * 255),
+            lroundf(b * 255),
+            a];
+}
+
 @end
