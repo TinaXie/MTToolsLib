@@ -7,7 +7,7 @@
 //
 
 #import "PHTextView.h"
-#import "NSString+Custom.m"
+#import "NSString+MT.h"
 
 @interface PHTextView ()
 
