@@ -4,13 +4,4 @@ platform :ios, '8.0'
 
 target 'MTToolsLib_Example' do
   pod 'MTToolsLib', :path => '../'
-
-  target 'MTToolsLib_Tests' do
-    inherit! :search_paths
-
-    pod 'Specta'
-    pod 'Expecta'
-    pod 'FBSnapshotTestCase'
-    pod 'Expecta+Snapshots'
-  end
 end
