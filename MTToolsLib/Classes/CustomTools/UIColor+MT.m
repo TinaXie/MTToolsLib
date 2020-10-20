@@ -140,7 +140,7 @@
     CGFloat b = 0.0;
     CGFloat a = 0.0;
     [self getRed:&r green:&g blue:&b alpha:&a];
-    return [NSString stringWithFormat:@"%ld%ld%ld%f",
+    return [NSString stringWithFormat:@"%ld,%ld,%ld,%f",
             lroundf(r * 255),
             lroundf(g * 255),
             lroundf(b * 255),
