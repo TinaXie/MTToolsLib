@@ -10,12 +10,12 @@
 #import "UIView+MT.h"
 #import "UIFont+MT.h"
 #import "UIColor+MT.h"
+#import "UIImage+MTHUD.h"
 
 #define MTHUDShowDuration 0.25
 #define MTHUDHideDuration 0.2
 #define MTHUDDisplayDuration 1.2
 
-#define MTHUDImage(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"MTHUD.bundle/%@", imageName]]
 
 @interface MTHUD ()
 

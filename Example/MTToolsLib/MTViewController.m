@@ -7,6 +7,7 @@
 //
 
 #import "MTViewController.h"
+#import "MTTools.h"
 
 @interface MTViewController ()
 
@@ -18,6 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [MTHUD showDurationSuccessHUD:@"test" animated:YES completedBlock:nil];
 }
 
 - (void)didReceiveMemoryWarning
